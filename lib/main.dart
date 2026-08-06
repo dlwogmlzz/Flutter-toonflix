@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const taxAmount = 15; // const는 수정할 수 없으며, 코드를 컴파일 하기 전에 값을 알수 있음.
+
+
 class Player {
   // String name = 'lee';
   // String name;
@@ -40,6 +43,7 @@ class App extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40),
 
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 80),
               Row(
@@ -71,6 +75,41 @@ class App extends StatelessWidget {
                         ),
                       ),
                     ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 120),
+              Text(
+                'Total Balance',
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white.withValues(alpha: 0.8),
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                '\$5 194 482',
+                style: TextStyle(
+                  fontSize: 48,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              SizedBox(height: 30),
+              Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(45),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.symmetric(
+                        vertical: 20,
+                        horizontal: 50,
+                      ),
+                      child: Text('Transfer', style: TextStyle(fontSize: 20)),
+                    ),
                   ),
                 ],
               ),
