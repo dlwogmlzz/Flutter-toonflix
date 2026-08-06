@@ -27,21 +27,50 @@ class App extends StatelessWidget {
     // 그래서 테마(시작점)를 선택해줘야 한다.
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: Colors.lightGreenAccent),
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, // Debug 배너 지우기
       home: Scaffold(
+        // backgroundColor: Colors.black,
+        // 0x - 16진수로 작성. / FF - 투명도 / 181818 - 실제 색상 값
+        backgroundColor: Color(0xFF181818),
         // Scaffold - 화면의 구성 및 구조에 관한 위젯
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.orangeAccent,
-          title: Text('Hello Dart', style: TextStyle(color: Colors.tealAccent)),
-        ),
+        body: Padding(
+          // padding: const EdgeInsets.all(
+          //   10,
+          // ), // EdgeInsets - 위젯의 여백(Padding)이나 바깥 여백(Margin)을 줄 때 사용하는 클래스
+          padding: const EdgeInsets.symmetric(horizontal: 40),
 
-        body: Center(
-          child: Text(
-            'Hello Flutter',
-            style: TextStyle(fontSize: 30.0, color: Colors.purple),
+          child: Column(
+            children: [
+              SizedBox(height: 80),
+              Row(
+                // vertical direction
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Hey, Selena',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      Text(
+                        'Welcome back',
+                        style: TextStyle(
+                          color: Colors.white.withValues(alpha: 0.8), // 투명도 추가
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
           ),
-        ), // Widget은 child,자식을 가지고 있다.
+        ),
       ),
     );
   }
