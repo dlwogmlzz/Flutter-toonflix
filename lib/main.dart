@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 
+class Player {
+  // String name = 'lee';
+  // String name;
+  String? name; // 타입 뒤에 ?(옵셔널)이 붙으면 아무 파라미터 없이도 Player를 만들 수 있음.
+
+  // Player({required this.name});
+  Player();
+}
+
 void main() {
-  runApp(App());
+  // var lee = Player('jaehee'); // 객체생성, new를 안써줘도 된다.
+  // var lee = Player(name: 'jaehee'); // 위에서 이름기반으로 만들고, required 해줬을때
+  var lee = Player(); // 위에서 이름기반으로 만들고, required 해줬을때
+  runApp(App()); // 앱 실행시 첫번째로 뜨는 위젯. 앱의 root
 }
 
 class App extends StatelessWidget {
@@ -17,16 +29,17 @@ class App extends StatelessWidget {
       theme: ThemeData(scaffoldBackgroundColor: Colors.lightGreenAccent),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        // Scaffold - 화면의 구성 및 구조에 관한 위젯
         appBar: AppBar(
           centerTitle: true,
-          backgroundColor: Colors.redAccent,
-          title: Text('Hello Dart'),
+          backgroundColor: Colors.orangeAccent,
+          title: Text('Hello Dart', style: TextStyle(color: Colors.tealAccent)),
         ),
 
         body: Center(
           child: Text(
             'Hello Flutter',
-            style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 30.0, color: Colors.purple),
           ),
         ), // Widget은 child,자식을 가지고 있다.
       ),
