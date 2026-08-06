@@ -12,7 +12,7 @@ class Player {
 void main() {
   // var lee = Player('jaehee'); // 객체생성, new를 안써줘도 된다.
   // var lee = Player(name: 'jaehee'); // 위에서 이름기반으로 만들고, required 해줬을때
-  var lee = Player(); // 위에서 이름기반으로 만들고, required 해줬을때
+  // var lee = Player(); // 위에서 이름기반으로 만들고, required 해줬을때
   runApp(App()); // 앱 실행시 첫번째로 뜨는 위젯. 앱의 root
 }
 
@@ -60,7 +60,13 @@ class App extends StatelessWidget {
                       Text(
                         'Welcome back',
                         style: TextStyle(
-                          color: Colors.white.withValues(alpha: 0.8), // 투명도 추가
+                          // color: Colors.white.withValues(alpha: 0.8), // 투명도 추가방법 1
+                          color: Color.fromRGBO(
+                            255,
+                            255,
+                            255,
+                            0.8,
+                          ), // 투명도 추가방법 2
                           fontSize: 18,
                         ),
                       ),
